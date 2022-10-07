@@ -1,3 +1,5 @@
+import Foundation
+
 func bubbleSort(unsortedArr: [String], endIndex: Int) {
     var unsortedArr = unsortedArr
     var endIndex = endIndex
@@ -27,7 +29,7 @@ var lowerList = [String]()
 
 while let input = readLine() {
     unsortedArr.append(input)
-    lowerList.append(input.lowercased())
+    lowerList.append((input.lowercased()).folding(options: .diacriticInsensitive, locale: Locale.current))
 }
 
 bubbleSort(unsortedArr: unsortedArr, endIndex: unsortedArr.count)
